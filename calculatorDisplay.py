@@ -121,7 +121,7 @@ class GUI():
 
     def buttons(self, root):
         buttonone = Button(frame, text="1", command = self.Buttons.button1)
-        buttonone.pack(side = LEFT)
+        buttonone.place(height=20,width=20,x=40,y=20)
 
         buttontwo = Button(frame, text="2", command = self.Buttons.button2)
         buttontwo.pack()
