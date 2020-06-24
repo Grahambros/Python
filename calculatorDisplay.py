@@ -6,16 +6,18 @@ import calculatorMain
 
 a = 0
 b = 0
+c = 0
 
 class Buttons():
 
     def __init__(self):
-        self.a = 0
+        self.calcmain = calculatorMain.Calculator()
     
 
     def button1(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -26,6 +28,7 @@ class Buttons():
     def button2(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -36,6 +39,7 @@ class Buttons():
     def button3(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -46,6 +50,7 @@ class Buttons():
     def button4(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -56,6 +61,7 @@ class Buttons():
     def button5(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -66,6 +72,7 @@ class Buttons():
     def button6(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -76,6 +83,7 @@ class Buttons():
     def button7(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -86,6 +94,7 @@ class Buttons():
     def button8(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -96,6 +105,7 @@ class Buttons():
     def button9(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
@@ -106,12 +116,22 @@ class Buttons():
     def button0(self):
         global b
         global a
+        global c
         if b <= 0:
             b +=1
         else:
             a *= 10
             a +=0
             print(str(a))
+
+    def equalbutton(self):
+        global a
+        global b
+        global c
+        if b <=0:
+            b+=1
+        else:
+            self.calcmain.calculate(a,c)
    
     
 
