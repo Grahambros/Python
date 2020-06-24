@@ -121,31 +121,31 @@ class GUI():
 
     def buttons(self, root):
         buttonone = Button(frame, text="1", command = self.Buttons.button1)
-        buttonone.pack()
+        buttonone.pack(side = LEFT)
 
         buttontwo = Button(frame, text="2", command = self.Buttons.button2)
         buttontwo.pack()
 
         buttonthree = Button(frame, text="3", command = self.Buttons.button3)
-        buttonthree.pack()
+        buttonthree.pack(side = RIGHT)
 
         buttonfour = Button(frame, text="4", command = self.Buttons.button4)
-        buttonfour.pack()
+        buttonfour.pack(side = LEFT)
 
         buttonfive = Button(frame, text="5", command = self.Buttons.button5)
         buttonfive.pack()
 
         buttonsix = Button(frame, text="6", command = self.Buttons.button6)
-        buttonsix.pack()
+        buttonsix.pack(side = RIGHT)
 
         buttonseven = Button(frame, text="7", command = self.Buttons.button7)
-        buttonseven.pack()
+        buttonseven.pack(side = LEFT)
 
         buttoneight = Button(frame, text="8", command = self.Buttons.button8)
         buttoneight.pack()
 
         buttonNine = Button(frame, text="9", command = self.Buttons.button9)
-        buttonNine.pack()
+        buttonNine.pack(side = RIGHT)
 
         buttonzero = Button(frame, text="0", command = self.Buttons.button0)
         buttonzero.pack()
@@ -157,7 +157,7 @@ buttons = Buttons()
 
 root = tkinter.Tk()
 
-calculatorBrainInvoke.calculate(2,3)
+root.title("Calculator")
 
 frame = Frame(root, height=540, width=500)
 frame.pack()
