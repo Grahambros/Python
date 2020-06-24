@@ -120,34 +120,34 @@ class GUI():
         self.Buttons = Buttons()
 
     def buttons(self, root):
-        buttonone = Button(frame, text="1", command = self.Buttons.button1)
+        buttonone = Button(root, text="1", command = self.Buttons.button1)
         buttonone.place(height=20,width=20,x=40,y=20)
 
-        buttontwo = Button(frame, text="2", command = self.Buttons.button2)
+        buttontwo = Button(root, text="2", command = self.Buttons.button2)
         buttontwo.pack()
 
-        buttonthree = Button(frame, text="3", command = self.Buttons.button3)
+        buttonthree = Button(root, text="3", command = self.Buttons.button3)
         buttonthree.pack(side = RIGHT)
 
-        buttonfour = Button(frame, text="4", command = self.Buttons.button4)
+        buttonfour = Button(root, text="4", command = self.Buttons.button4)
         buttonfour.pack(side = LEFT)
 
-        buttonfive = Button(frame, text="5", command = self.Buttons.button5)
+        buttonfive = Button(root, text="5", command = self.Buttons.button5)
         buttonfive.pack()
 
-        buttonsix = Button(frame, text="6", command = self.Buttons.button6)
+        buttonsix = Button(root, text="6", command = self.Buttons.button6)
         buttonsix.pack(side = RIGHT)
 
-        buttonseven = Button(frame, text="7", command = self.Buttons.button7)
+        buttonseven = Button(root, text="7", command = self.Buttons.button7)
         buttonseven.pack(side = LEFT)
 
-        buttoneight = Button(frame, text="8", command = self.Buttons.button8)
+        buttoneight = Button(root, text="8", command = self.Buttons.button8)
         buttoneight.pack()
 
-        buttonNine = Button(frame, text="9", command = self.Buttons.button9)
+        buttonNine = Button(root, text="9", command = self.Buttons.button9)
         buttonNine.pack(side = RIGHT)
 
-        buttonzero = Button(frame, text="0", command = self.Buttons.button0)
+        buttonzero = Button(root, text="0", command = self.Buttons.button0)
         buttonzero.pack()
 
 
@@ -159,20 +159,18 @@ root = tkinter.Tk()
 
 root.title("Calculator")
 
-frame = Frame(root, height=540, width=500)
-frame.pack()
-bottomframe = Frame(root, height=540, width=500)
-bottomframe.pack()
+root.geometry("500x540")
+
 
 gui = GUI()
 gui.buttons(root)
 
-windowWidth = frame.winfo_reqwidth()
-windowHeight = frame.winfo_reqheight()
-print("Width",windowWidth,"Height",windowHeight)
+windowWidth = root.winfo_reqwidth()
+windowHeight = root.winfo_reqheight()
 
-positionRight = int(root.winfo_screenwidth()/2 - windowWidth/2)
-positionDown = int(root.winfo_screenheight()/2 - windowHeight/2)
+
+positionRight = int(710)
+positionDown = int(270)
 
 # Positions the window in the center of the page.
 root.geometry("+{}+{}".format(positionRight, positionDown))
