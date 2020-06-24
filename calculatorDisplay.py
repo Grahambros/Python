@@ -52,6 +52,67 @@ class Buttons():
             a *= 10
             a +=4
             print(str(a))
+
+    def button5(self):
+        global b
+        global a
+        if b <= 0:
+            b +=1
+        else:
+            a *= 10
+            a +=5
+            print(str(a))
+
+    def button6(self):
+        global b
+        global a
+        if b <= 0:
+            b +=1
+        else:
+            a *= 10
+            a +=6
+            print(str(a))
+
+    def button7(self):
+        global b
+        global a
+        if b <= 0:
+            b +=1
+        else:
+            a *= 10
+            a +=7
+            print(str(a))
+
+    def button8(self):
+        global b
+        global a
+        if b <= 0:
+            b +=1
+        else:
+            a *= 10
+            a +=8
+            print(str(a))
+
+    def button9(self):
+        global b
+        global a
+        if b <= 0:
+            b +=1
+        else:
+            a *= 10
+            a +=9
+            print(str(a))
+
+    def button0(self):
+        global b
+        global a
+        if b <= 0:
+            b +=1
+        else:
+            a *= 10
+            a +=0
+            print(str(a))
+   
     
 
 class GUI():
@@ -62,31 +123,31 @@ class GUI():
         buttonone = Button(frame, text="1", command = self.Buttons.button1)
         buttonone.pack()
 
-        buttontwo = Button(frame, text="2", command = self.Buttons.button1)
+        buttontwo = Button(frame, text="2", command = self.Buttons.button2)
         buttontwo.pack()
 
-        buttonthree = Button(frame, text="3", command = self.Buttons.button1)
+        buttonthree = Button(frame, text="3", command = self.Buttons.button3)
         buttonthree.pack()
 
-        buttonfour = Button(frame, text="4", command = self.Buttons.button1)
+        buttonfour = Button(frame, text="4", command = self.Buttons.button4)
         buttonfour.pack()
 
-        buttonfive = Button(frame, text="5", command = self.Buttons.button1)
+        buttonfive = Button(frame, text="5", command = self.Buttons.button5)
         buttonfive.pack()
 
-        buttonsix = Button(frame, text="6", command = self.Buttons.button1)
+        buttonsix = Button(frame, text="6", command = self.Buttons.button6)
         buttonsix.pack()
 
-        buttonseven = Button(frame, text="7", command = self.Buttons.button1)
+        buttonseven = Button(frame, text="7", command = self.Buttons.button7)
         buttonseven.pack()
 
-        buttoneight = Button(frame, text="8", command = self.Buttons.button1)
+        buttoneight = Button(frame, text="8", command = self.Buttons.button8)
         buttoneight.pack()
 
-        buttonNine = Button(frame, text="9", command = self.Buttons.button1)
+        buttonNine = Button(frame, text="9", command = self.Buttons.button9)
         buttonNine.pack()
 
-        buttonzero = Button(frame, text="0", command = self.Buttons.button1)
+        buttonzero = Button(frame, text="0", command = self.Buttons.button0)
         buttonzero.pack()
 
 
