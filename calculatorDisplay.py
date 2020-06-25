@@ -8,7 +8,7 @@ a = 0
 b = 0
 c = 0
 
-class Buttons():
+class Buttonfunctions():
 
     def __init__(self):
         self.calcmain = calculatorMain.Calculator()
@@ -135,45 +135,45 @@ class Buttons():
    
     
 
-class GUI():
+class ButtonObjects():
     def __init__(self):
-        self.Buttons = Buttons()
+        self.Buttons = Buttonfunctions()
 
     def buttons(self, root):
         buttonone = Button(root, text="1", command = self.Buttons.button1)
-        buttonone.place(height=20,width=20,x=40,y=20)
+        buttonone.place(height=40,width=40,x=180,y=490)
 
         buttontwo = Button(root, text="2", command = self.Buttons.button2)
-        buttontwo.pack()
+        buttontwo.place(height=40,width=40,x=230,y=490)
 
         buttonthree = Button(root, text="3", command = self.Buttons.button3)
-        buttonthree.pack(side = RIGHT)
+        buttonthree.place(height=40,width=40,x=280,y=490)
 
         buttonfour = Button(root, text="4", command = self.Buttons.button4)
-        buttonfour.pack(side = LEFT)
+        buttonfour.place(height=40,width=40,x=180,y=440)
 
         buttonfive = Button(root, text="5", command = self.Buttons.button5)
-        buttonfive.pack()
+        buttonfive.place(height=40,width=40,x=230,y=440)
 
         buttonsix = Button(root, text="6", command = self.Buttons.button6)
-        buttonsix.pack(side = RIGHT)
+        buttonsix.place(height=40,width=40,x=280,y=440)
 
         buttonseven = Button(root, text="7", command = self.Buttons.button7)
-        buttonseven.pack(side = LEFT)
+        buttonseven.place(height=40,width=40,x=180,y=390)
 
         buttoneight = Button(root, text="8", command = self.Buttons.button8)
-        buttoneight.pack()
+        buttoneight.place(height=40,width=40,x=230,y=390)
 
         buttonNine = Button(root, text="9", command = self.Buttons.button9)
-        buttonNine.pack(side = RIGHT)
+        buttonNine.place(height=40,width=40,x=280,y=390)
 
         buttonzero = Button(root, text="0", command = self.Buttons.button0)
-        buttonzero.pack()
+        buttonzero.place(height=40,width=40,x=130,y=490)
 
 
 calculatorBrainInvoke = calculatorMain.Calculator()
 
-buttons = Buttons()
+buttons = Buttonfunctions()
 
 root = tkinter.Tk()
 
@@ -182,7 +182,7 @@ root.title("Calculator")
 root.geometry("500x540")
 
 
-gui = GUI()
+gui = ButtonObjects()
 gui.buttons(root)
 
 windowWidth = root.winfo_reqwidth()
