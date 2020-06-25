@@ -148,42 +148,14 @@ class ButtonObjects():
             for y in range(1,4):
                 self.i+=1
                 testbutton = Button(root, text=str(self.i), command = self.myargs[self.i])
-                testbutton.place(height = 40, width = 40, x = 20 - 50 + 50*y, y = 30 - 50 + 50*x)
+                testbutton.place(height = 40, width = 40, x = 180 - 50 + 50*y, y = 490 + 50 - 50*x)
 
-        buttonone = Button(root, text="1", command = self.Buttons.button1)
-        buttonone.place(height=40,width=40,x=180,y=490)
-
-        buttontwo = Button(root, text="2", command = self.Buttons.button2)
-        buttontwo.place(height=40,width=40,x=230,y=490)
-
-        buttonthree = Button(root, text="3", command = self.Buttons.button3)
-        buttonthree.place(height=40,width=40,x=280,y=490)
-
-        buttonfour = Button(root, text="4", command = self.Buttons.button4)
-        buttonfour.place(height=40,width=40,x=180,y=440)
-
-        buttonfive = Button(root, text="5", command = self.Buttons.button5)
-        buttonfive.place(height=40,width=40,x=230,y=440)
-
-        buttonsix = Button(root, text="6", command = self.Buttons.button6)
-        buttonsix.place(height=40,width=40,x=280,y=440)
-
-        buttonseven = Button(root, text="7", command = self.Buttons.button7)
-        buttonseven.place(height=40,width=40,x=180,y=390)
-
-        buttoneight = Button(root, text="8", command = self.Buttons.button8)
-        buttoneight.place(height=40,width=40,x=230,y=390)
-
-        buttonNine = Button(root, text="9", command = self.Buttons.button9)
-        buttonNine.place(height=40,width=40,x=280,y=390)
 
         buttonzero = Button(root, text="0", command = self.Buttons.button0)
         buttonzero.place(height=40,width=40,x=130,y=490)
 
 
 calculatorBrainInvoke = calculatorMain.Calculator()
-
-buttons = Buttonfunctions()
 
 root = tkinter.Tk()
 
