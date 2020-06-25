@@ -140,13 +140,14 @@ class ButtonObjects():
     def __init__(self):
         self.Buttons = Buttonfunctions()
         self.i = 0
+        self.myargs = [self.Buttons.button0, self.Buttons.button1, self.Buttons.button2, self.Buttons.button3, self.Buttons.button4, self.Buttons.button5, self.Buttons.button6, self.Buttons.button7, self.Buttons.button8, self.Buttons.button9]
 
     def buttons(self, root):
 
         for x in range(1, 4):
             for y in range(1,4):
                 self.i+=1
-                testbutton = Button(root, text=str(self.i), command = self.Buttons.button2)
+                testbutton = Button(root, text=str(self.i), command = self.myargs[self.i])
                 testbutton.place(height = 40, width = 40, x = 20 - 50 + 50*y, y = 30 - 50 + 50*x)
 
         buttonone = Button(root, text="1", command = self.Buttons.button1)
