@@ -1,11 +1,12 @@
 import random
 import tkinter
-from tkinter import *
+from tkinter import Button
+#from tkinter import *
 import os
 import calculatorMain
 
 a = 0
-b = 0
+b = 1
 c = 0
 
 class Buttonfunctions():
@@ -138,8 +139,16 @@ class Buttonfunctions():
 class ButtonObjects():
     def __init__(self):
         self.Buttons = Buttonfunctions()
+        self.i = 0
 
     def buttons(self, root):
+
+        for x in range(1, 4):
+            for y in range(1,4):
+                self.i+=1
+                testbutton = Button(root, text=str(self.i), command = self.Buttons.button2)
+                testbutton.place(height = 40, width = 40, x = 20 - 50 + 50*y, y = 30 - 50 + 50*x)
+
         buttonone = Button(root, text="1", command = self.Buttons.button1)
         buttonone.place(height=40,width=40,x=180,y=490)
 
@@ -184,9 +193,6 @@ root.geometry("500x540")
 
 gui = ButtonObjects()
 gui.buttons(root)
-
-windowWidth = root.winfo_reqwidth()
-windowHeight = root.winfo_reqheight()
 
 
 positionRight = int(710)
