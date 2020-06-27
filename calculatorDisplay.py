@@ -10,11 +10,15 @@ import calculatorMain
 a = 0
 b = 100
 c = 0
-
+#the b stands for button. bool for a button that controls an operation
+isoperatebpressed = False
+#This class is a mess because i had to make different functions for all the buttons. functools.partial wasn't working and neither was lambda:
+#it would also probably be easier to change the numberedbutton's state to disabled if they did work...
 class Buttonfunctions():
 
     def __init__(self):
         self.calcmain = calculatorMain.Calculator()
+        self.operationnum = int
         self.w = Label(root, text=str(a))
         self.w.place(x=240, y = 50)
     
@@ -123,10 +127,52 @@ class Buttonfunctions():
         global a
         global b
         global c
+        global isoperatebpressed
+        isoperatebpressed = True
         print(str(a+b))
         self.calcmain.calculate(a,c)
         self.w = Label(root, text=(str(a)))
         self.w.place(x=240, y = 50)
+        return isoperatebpressed
+
+#i need a way to disable the numberedbuttons still...
+
+    def multiplicationButton(self):
+        global a
+        global b
+        global c
+        global isoperatebpressed
+        isoperatebpressed = True
+        self.operationnum = 2
+        print(str(self.operationnum))
+
+    def divisionButton(self):
+        global a
+        global b
+        global c
+        global isoperatebpressed
+        isoperatebpressed = True
+        self.operationnum = 1
+        print(str(self.operationnum))
+
+    def additionButton(self):
+        global a
+        global b
+        global c
+        global isoperatebpressed
+        isoperatebpressed = True
+        self.operationnum = 3
+        print(str(self.operationnum))
+
+    def subtractionButton(self):
+        global a
+        global b
+        global c
+        global isoperatebpressed
+        isoperatebpressed = True
+        self.operationnum = 4
+        print(str(self.operationnum))
+
    
    
 #i need a way to disable the numbered buttons when the equals button is pressed
@@ -135,6 +181,7 @@ class ButtonObjects():
         self.Buttons = Buttonfunctions()
         self.i = 0
         self.myargs = [self.Buttons.button0, self.Buttons.button1, self.Buttons.button2, self.Buttons.button3, self.Buttons.button4, self.Buttons.button5, self.Buttons.button6, self.Buttons.button7, self.Buttons.button8, self.Buttons.button9]
+        self.myoperators = [self.Buttons.button0, self.Buttons.divisionButton, self.Buttons.multiplicationButton, self.Buttons.additionButton, self.Buttons.subtractionButton]
 
     def buttons(self, root):
         numberedbutton = Button()
@@ -151,6 +198,25 @@ class ButtonObjects():
         buttonEquals = Button(root, text="=", command = self.Buttons.equalbutton)
         buttonEquals.place(height=40,width=50, x = 120, y = 430)
 
+        for t in range(0, 4):
+
+            t +=1
+            if t == 1:
+                print("t = 1")
+                self.text = "÷"
+            if t == 2:
+                self.text = "x"
+            if t == 3:
+                self.text = "+"
+            if t == 4:
+                print("t = 4")
+                self.text = "-"
+            
+
+            operationbutton = Button(root, text=self.text, command = self.myoperators[t])
+            operationbutton.place(height=40,width=40, x = 120, y = 430 - 50*t)
+
+    
 
 
 calculatorBrainInvoke = calculatorMain.Calculator()
@@ -161,22 +227,10 @@ root.title("Calculator")
 
 root.geometry("500x540")
 
-gui = ButtonObjects()
-gui.buttons(root)
-
-
-root.update_idletasks()
-
-
 # Positions the window in the center of the page.
 root.geometry("+710+270")
 
+gui = ButtonObjects()
+gui.buttons(root)
+
 root.mainloop()
-
-
-
-
-
-
-
-
