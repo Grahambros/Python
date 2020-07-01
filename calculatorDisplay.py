@@ -17,8 +17,10 @@ isoperatebpressed = False
 class Buttonfunctions():
 
     def __init__(self):
-        self.calcmain = calculatorMain.Calculator()
+        self.calcmain = calculatorMain
+        self.calcfuncs = calculatorMain.Calculator()
         self.operationnum = int
+        self.secondtime = False
         self.w = Label(root, text=str(a))
         self.w.place(x=240, y = 50)
     
@@ -186,12 +188,12 @@ class Buttonfunctions():
         global b
         global c
         global isoperatebpressed
-        self.calcmain.calculate(a,c)
-        if(isoperatebpressed): self.w.config(text=str(a))
-        else: self.w.config(text=str(b))
+        self.calcfuncs.calculate(a,b, self.operationnum, self.secondtime)
+        a = self.calcmain.answer 
+        b = 0
+        self.w.config(text=str(a))
         self.w.place(x=240, y = 50)
-
-#i need a way to disable the numberedbuttons still...
+        self.secondtime = True
 
     def multiplicationButton(self):
         global a
@@ -244,7 +246,7 @@ class ButtonObjects():
         self.myoperators = [self.Buttons.button0, self.Buttons.divisionButton, self.Buttons.multiplicationButton, self.Buttons.additionButton, self.Buttons.subtractionButton]
 
     def buttons(self, root):
-        self.text = ["÷", "x", "+", "-"]
+        self.text = ["help","÷", "x", "+", "-"]
         self.u = 0
         numberedbutton = Button()
         for x in range(1, 4):
@@ -265,7 +267,7 @@ class ButtonObjects():
             for r in range(0,2):
                 r+= 1
                 self.u += 1
-                operationbutton = Button(root, text=self.text[self.u - 1], command = self.myoperators[self.u])
+                operationbutton = Button(root, text=self.text[self.u], command = self.myoperators[self.u])
                 operationbutton.place(height=40,width=40, x = 120-(50*t), y = 380+(50*r))
             
 
