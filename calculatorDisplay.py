@@ -184,6 +184,8 @@ class ButtonObjects():
         self.myoperators = [self.Buttons.button0, self.Buttons.divisionButton, self.Buttons.multiplicationButton, self.Buttons.additionButton, self.Buttons.subtractionButton]
 
     def buttons(self, root):
+        self.text = ["÷", "x", "+", "-"]
+        self.u = 0
         numberedbutton = Button()
         for x in range(1, 4):
             for y in range(1,4):
@@ -198,23 +200,14 @@ class ButtonObjects():
         buttonEquals = Button(root, text="=", command = self.Buttons.equalbutton)
         buttonEquals.place(height=40,width=50, x = 120, y = 430)
 
-        for t in range(0, 4):
-
-            t +=1
-            if t == 1:
-                print("t = 1")
-                self.text = "÷"
-            if t == 2:
-                self.text = "x"
-            if t == 3:
-                self.text = "+"
-            if t == 4:
-                print("t = 4")
-                self.text = "-"
+        for t in range(0, 2):
+            t+= 1
+            for r in range(0,2):
+                r+= 1
+                self.u += 1
+                operationbutton = Button(root, text=self.text[self.u - 1], command = self.myoperators[self.u])
+                operationbutton.place(height=40,width=40, x = 120-(50*t), y = 380+(50*r))
             
-
-            operationbutton = Button(root, text=self.text, command = self.myoperators[t])
-            operationbutton.place(height=40,width=40, x = 120, y = 430 - 50*t)
 
     
 
