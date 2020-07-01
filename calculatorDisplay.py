@@ -20,7 +20,6 @@ class Buttonfunctions():
         self.calcmain = calculatorMain
         self.calcfuncs = calculatorMain.Calculator()
         self.operationnum = int
-        self.secondtime = False
         self.w = Label(root, text=str(a))
         self.w.place(x=240, y = 50)
     
@@ -188,12 +187,11 @@ class Buttonfunctions():
         global b
         global c
         global isoperatebpressed
-        self.calcfuncs.calculate(a,b, self.operationnum, self.secondtime)
+        self.calcfuncs.calculate(a,b, self.operationnum)
         a = self.calcmain.answer 
         b = 0
         self.w.config(text=str(a))
         self.w.place(x=240, y = 50)
-        self.secondtime = True
 
     def multiplicationButton(self):
         global a

@@ -1,11 +1,8 @@
 answer = 123457890
-secondtime = False
 
 class Calculator():
 
-    def calculate(self, num1, num2, operationnum, true):
-        global secondtime
-        secondtime = true
+    def calculate(self, num1, num2, operationnum):
         self.opn = operationnum
         if(self.opn == 1): division(num1, num2)
         if(self.opn == 2): multiplication(num1, num2)
@@ -17,9 +14,7 @@ class Calculator():
 
 def division(num1, num2):
     global answer
-    global secondtime
-    if(secondtime != True): answer = num1/num2
-    else: answer = num2/num1
+    answer = num1/num2
 
 #doesn't matter if this one is reversed or not
 def multiplication(num1, num2):
@@ -34,6 +29,4 @@ def addition(num1, num2):
 #but not this one
 def subtraction(num1, num2):
     global answer
-    global secondtime
-    if(secondtime != True): answer = num1 - num2
-    else: answer = num2 - num1
+    answer = num1 - num2
