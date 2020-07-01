@@ -8,7 +8,7 @@ import os
 import calculatorMain
 
 a = 0
-b = 100
+b = 0
 c = 0
 #the b stands for button. bool for a button that controls an operation
 isoperatebpressed = False
@@ -27,113 +27,169 @@ class Buttonfunctions():
         global b
         global a
         global c
-        a *= 10
-        a +=1
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=1
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=1
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button2(self):
         global b
         global a
         global c
-        a *= 10
-        a +=2
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=2
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=2
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button3(self):
         global b
         global a
         global c
-        a *= 10
-        a +=3
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=3
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=3
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button4(self):
         global b
         global a
         global c
-        a *= 10
-        a +=4
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=4
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=4
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button5(self):
         global b
         global a
         global c
-        a *= 10
-        a +=5
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=5
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=5
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button6(self):
         global b
         global a
         global c
-        a *= 10
-        a +=6
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=6
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=6
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button7(self):
         global b
         global a
         global c
-        a *= 10
-        a +=7
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=7
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=7
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button8(self):
         global b
         global a
         global c
-        a *= 10
-        a +=8
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=8
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=8
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button9(self):
         global b
         global a
         global c
-        a *= 10
-        a +=9
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            a +=9
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            b +=9
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def button0(self):
         global b
         global a
         global c
-        a *= 10
-        a +=0
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed != True):
+            a *= 10
+            self.w.config(text=str(a))
+            print(str(a))
+        else:
+            b *= 10
+            self.w.config(text=str(b))
+            print(str(b))
         self.w.place(x=240, y = 50)
-        print(str(a))
 
     def equalbutton(self):
         global a
         global b
         global c
         global isoperatebpressed
-        isoperatebpressed = True
-        print(str(a+b))
         self.calcmain.calculate(a,c)
-        self.w = Label(root, text=(str(a)))
+        if(isoperatebpressed): self.w.config(text=str(a))
+        else: self.w.config(text=str(b))
         self.w.place(x=240, y = 50)
-        return isoperatebpressed
 
 #i need a way to disable the numberedbuttons still...
 
@@ -144,7 +200,8 @@ class Buttonfunctions():
         global isoperatebpressed
         isoperatebpressed = True
         self.operationnum = 2
-        print(str(self.operationnum))
+        self.w.config(text=str(b))
+        return isoperatebpressed
 
     def divisionButton(self):
         global a
@@ -153,7 +210,8 @@ class Buttonfunctions():
         global isoperatebpressed
         isoperatebpressed = True
         self.operationnum = 1
-        print(str(self.operationnum))
+        self.w.config(text=str(b))
+        return isoperatebpressed
 
     def additionButton(self):
         global a
@@ -162,7 +220,8 @@ class Buttonfunctions():
         global isoperatebpressed
         isoperatebpressed = True
         self.operationnum = 3
-        print(str(self.operationnum))
+        self.w.config(text=str(b))
+        return isoperatebpressed
 
     def subtractionButton(self):
         global a
@@ -171,7 +230,8 @@ class Buttonfunctions():
         global isoperatebpressed
         isoperatebpressed = True
         self.operationnum = 4
-        print(str(self.operationnum))
+        self.w.config(text=str(b))
+        return isoperatebpressed
 
    
    
