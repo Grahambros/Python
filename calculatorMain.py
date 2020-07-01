@@ -1,16 +1,18 @@
-answer = 0
+answer = 123457890
 secondtime = False
 
 class Calculator():
 
     def calculate(self, num1, num2, operationnum, true):
-        global answer
         global secondtime
         secondtime = true
         self.opn = operationnum
-        answer = num1
-        self.list = [nothing(num1), division(num1, num2), multiplication(num1, num2), addition(num1, num2), subtraction(num1, num2)]
-        self.list[self.opn]
+        if(self.opn == 1): division(num1, num2)
+        if(self.opn == 2): multiplication(num1, num2)
+        if(self.opn == 3): addition(num1, num2)
+        if(self.opn == 4): subtraction(num1,num2)
+        if(self.opn != 1 and self.opn != 2 and self.opn !=3 and self.opn != 4): print("no operator chosen!\n...or my code broke somehow")
+        
         print(answer)
 
 def division(num1, num2):
@@ -35,6 +37,3 @@ def subtraction(num1, num2):
     global secondtime
     if(secondtime != True): answer = num1 - num2
     else: answer = num2 - num1
-
-def nothing(num1):
-    print("idk why this runs everytime wait yes i do")
