@@ -254,15 +254,11 @@ class ButtonObjects():
                 operationbutton.place(height=40,width=40, x = 120-(50*t), y = 380+(50*r))
             
 
-    
-
-
+#I really have to fix my naming convention
 calculatorBrainInvoke = calculatorMain.Calculator()
 
 root = tkinter.Tk()
-
 root.title("Calculator")
-
 root.geometry("500x540")
 
 # Positions the window in the center of the page.
