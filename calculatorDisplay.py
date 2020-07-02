@@ -3,7 +3,6 @@ import tkinter
 from tkinter import Button
 from tkinter import Text
 from tkinter import Label
-#from tkinter import *
 import os
 import calculatorMain
 
