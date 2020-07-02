@@ -12,7 +12,8 @@ b = 0
 isoperatebpressed = False
 
 
-#This class is a mess because i had to make different functions for all the buttons. functools.partial wasn't working and neither was lambda(it would give all same values for each button)
+#This class is a mess because i had to make different functions for all the buttons.
+# I tried to make only one function, but it didn't work for some reason. i heard functools.partial could work but it wasn't and neither was lambda(it would give all same values for each button)
 class Buttonfunctions():
 
     def __init__(self):
