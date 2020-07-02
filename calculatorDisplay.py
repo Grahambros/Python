@@ -3,8 +3,7 @@ import tkinter
 from tkinter import Button
 from tkinter import Text
 from tkinter import Label
-import os
-import calculatorMain
+import calculatorOperations
 
 a = 0
 b = 0
@@ -17,8 +16,8 @@ isoperatebpressed = False
 class Buttonfunctions():
 
     def __init__(self):
-        self.calcmain = calculatorMain
-        self.calcfuncs = calculatorMain.Calculator()
+        self.calcmain = calculatorOperations
+        self.calcfuncs = calculatorOperations.Calculator()
         self.operationnum = int
         self.w = Label(root, text=str(a))
         self.w.place(x=240, y = 50)
@@ -253,9 +252,6 @@ class ButtonObjects():
                 operationbutton = Button(root, text=self.text[self.u], command = self.myoperators[self.u])
                 operationbutton.place(height=40,width=40, x = 120-(50*t), y = 380+(50*r))
             
-
-#I really have to fix my naming convention
-calculatorBrainInvoke = calculatorMain.Calculator()
 
 root = tkinter.Tk()
 root.title("Calculator")
